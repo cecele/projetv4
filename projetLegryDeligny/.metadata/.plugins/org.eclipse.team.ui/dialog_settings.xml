@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SynchronizeViewSettings">
+		<item value="false" key="linkWithEditor"/>
+		<item value="1398852387879" key="lastactiveparticipant_sec_id"/>
+		<item value="org.eclipse.egit.ui.modelCompareParticipant" key="lastactiveparticipant_id"/>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398798894620">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398852387879">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398778762518">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398798851620">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398792213297">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398796928719">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398779053089">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398701108272">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398700469569">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398798643929">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398852286307">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398703057479">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398776047694">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398700980668">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398778617631">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398776983773">
+		</section>
+		<section name="org.eclipse.egit.ui.modelCompareParticipant.1398777074149">
+		</section>
+	</section>
+	<section name="ConfigureProjectWizard">
+		<item value="org.eclipse.egit.ui.internal.sharing.SharingWizard" key="selectedWizardId"/>
+	</section>
+</section>
