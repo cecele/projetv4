@@ -21,7 +21,7 @@
 			<article id="accueil">
 					
 					<header>
-						<h2>Stations</h2>
+						<h2>Coucou</h2>
 					</header>
 					<p id="accueil">Superski vous propose un aperçu des meilleures stations de ski de France.<br/>
 					Nous avons dépéché nos meilleurs testeurs, et avons effectué une revue d'effectif des forces en présence. Que vous aimiez les vacances en famille, les descentes de poudreuse ou les soirées enflammées, soyez surs que nous avons la station qui vous plaira.<br/>
