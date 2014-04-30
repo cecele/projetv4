@@ -17,12 +17,16 @@ public class Eleve{
 	Integer cotisant;
 	Integer eleve_profil;
 	Integer diplome;
+	String motdepasse;
 	
+
+
 
 public Eleve(String id_eleve, String eleve_nom, String eleve_prenom,
 			Date date_naissance, Integer numrue, String nomrue,
 			String codepostal, String ville, Date date_entree,
-			Integer cotisant, Integer eleve_profil, Integer diplome) {
+			Integer cotisant, Integer eleve_profil, Integer diplome,
+			String motdepasse) {
 		super();
 		this.id_eleve = id_eleve;
 		this.eleve_nom = eleve_nom;
@@ -36,7 +40,16 @@ public Eleve(String id_eleve, String eleve_nom, String eleve_prenom,
 		this.cotisant = cotisant;
 		this.eleve_profil = eleve_profil;
 		this.diplome = diplome;
+		this.motdepasse = motdepasse;
 	}
+
+public String getMotdepasse() {
+	return motdepasse;
+}
+
+public void setMotdepasse(String motdepasse) {
+	this.motdepasse = motdepasse;
+}
 
 public Integer getDiplome() {
 	return diplome;

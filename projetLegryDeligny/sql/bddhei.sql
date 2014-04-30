@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Mar 29 Avril 2014 à 17:04
+-- Généré le: Mer 30 Avril 2014 à 17:03
 -- Version du serveur: 5.6.11-log
 -- Version de PHP: 5.4.14
 
@@ -49,7 +49,7 @@ INSERT INTO `appartenir` (`id_eleve`, `cle_classe`) VALUES
 CREATE TABLE IF NOT EXISTS `classe` (
   `cle_classe` int(11) NOT NULL AUTO_INCREMENT,
   `classe` char(3) DEFAULT NULL,
-  `annee` year(4) DEFAULT NULL,
+  `annee` char(4) DEFAULT NULL,
   PRIMARY KEY (`cle_classe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `classe` (
 --
 
 INSERT INTO `classe` (`cle_classe`, `classe`, `annee`) VALUES
-(1, 'H43', 2014);
+(1, 'H43', '2014');
 
 -- --------------------------------------------------------
 
@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   `cotisant` tinyint(1) DEFAULT NULL,
   `eleve_profil` int(11) DEFAULT NULL,
   `diplome` int(11) DEFAULT NULL,
+  `motdepasse` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_eleve`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,8 +87,8 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 -- Contenu de la table `eleve`
 --
 
-INSERT INTO `eleve` (`id_eleve`, `eleve_nom`, `eleve_prenom`, `date_naissance`, `numrue`, `nomrue`, `codepostal`, `ville`, `date_entree`, `cotisant`, `eleve_profil`, `diplome`) VALUES
-('10153', 'LEGRY', 'Céline', '1991-06-14', 59, 'rue des stations', '59000', 'Lille', 2009, 1, 1, 0);
+INSERT INTO `eleve` (`id_eleve`, `eleve_nom`, `eleve_prenom`, `date_naissance`, `numrue`, `nomrue`, `codepostal`, `ville`, `date_entree`, `cotisant`, `eleve_profil`, `diplome`, `motdepasse`) VALUES
+('10153', 'LEGRY', 'Céline', '1991-06-14', 59, 'rue des stations', '59000', 'Lille', 2009, 1, 1, 0, 'motdepasse');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `offre` (
   `date_depot` date DEFAULT NULL,
   `date_miseenligne` date DEFAULT NULL,
   `date_tea` date DEFAULT NULL,
-  `heure_debut` char(1) DEFAULT NULL,
+  `heure_debut` char(6) DEFAULT NULL,
   `heure_fin` char(6) DEFAULT NULL,
   `statut` int(11) DEFAULT NULL,
   `offre_description` varchar(1000) DEFAULT NULL,
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `offre` (
 --
 
 INSERT INTO `offre` (`cle_offre`, `date_depot`, `date_miseenligne`, `date_tea`, `heure_debut`, `heure_fin`, `statut`, `offre_description`, `eleve_mail`, `offre_titre`, `offre_place`, `cle_structure`) VALUES
-(1, '2014-04-29', '2014-04-29', '2014-04-30', '1', '13H00', 1, 'QSDFQSFQSF', 'cc@hei.fr', 'title', 2, 1);
+(1, '2014-04-29', '2014-04-30', '2014-04-30', '00H00', '01H00', 1, 'DESCRIPTION', 'cc@hei.fr', 'TITRE', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -128,7 +129,7 @@ INSERT INTO `offre` (`cle_offre`, `date_depot`, `date_miseenligne`, `date_tea`, 
 CREATE TABLE IF NOT EXISTS `presider` (
   `id_eleve` char(6) NOT NULL,
   `cle_structure` int(11) NOT NULL,
-  `annee_appartenance` date DEFAULT NULL,
+  `annee_appartenance` char(4) DEFAULT NULL,
   PRIMARY KEY (`id_eleve`,`cle_structure`),
   KEY `FK_PRESIDER_cle_structure` (`cle_structure`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -138,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `presider` (
 --
 
 INSERT INTO `presider` (`id_eleve`, `cle_structure`, `annee_appartenance`) VALUES
-('10153', 1, '0000-00-00');
+('10153', 1, '2014');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `structure` (
 --
 
 INSERT INTO `structure` (`cle_structure`, `structure_nom`, `structure_president`) VALUES
-(1, 'Comité-Logistique', 'cc');
+(1, 'Comité-Logistique', 'Céline Legry');
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,14 @@ CREATE TABLE IF NOT EXISTS `tea` (
   PRIMARY KEY (`cle_tea`),
   KEY `FK_TEA_cle_offre` (`cle_offre`),
   KEY `FK_TEA_id_eleve` (`id_eleve`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `tea`
+--
+
+INSERT INTO `tea` (`cle_tea`, `date_tea_realisee`, `nbheure_realisee`, `staut_valide`, `date_validation`, `cle_offre`, `id_eleve`) VALUES
+(1, '2014-04-30', 2, 0, NULL, 1, '10153');
 
 --
 -- Contraintes pour les tables exportées

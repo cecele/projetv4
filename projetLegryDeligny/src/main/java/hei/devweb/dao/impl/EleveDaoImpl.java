@@ -18,7 +18,7 @@ public class EleveDaoImpl implements EleveDao {
 	//accès en lecture
 	
 	public Eleve getEleveById(String ideleve){
-		Eleve eleve = new Eleve(null,null,null, null, null, null, null, null, null, null, null,null);
+		Eleve eleve = new Eleve(null,null,null, null, null, null, null, null, null, null, null,null,null);
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();
@@ -41,7 +41,8 @@ public class EleveDaoImpl implements EleveDao {
 			results.getDate("date_entree"),
 			results.getInt("cotisant"),
 			results.getInt("eleve_profil"),
-			results.getInt("eleve_profil"));
+			results.getInt("eleve_profil"),
+			results.getString("motdepasse"));
 				
 				// Fermer la connexion
 				results.close();
@@ -81,7 +82,8 @@ public class EleveDaoImpl implements EleveDao {
 			results.getDate("date_entree"),
 			results.getInt("cotisant"),
 			results.getInt("eleve_profil"),
-			results.getInt("diplome"));
+			results.getInt("diplome"),
+			results.getString("motdepasse"));
 			
 				eleves.add(eleve);	
 				
@@ -124,7 +126,8 @@ public class EleveDaoImpl implements EleveDao {
 				results.getDate("date_entree"),
 				results.getInt("cotisant"),
 				results.getInt("eleve_profil"),
-				results.getInt("diplome"));
+				results.getInt("diplome"),
+				results.getString("motdepasse"));
 				
 					eleves.add(eleve);	
 					
@@ -168,7 +171,8 @@ public class EleveDaoImpl implements EleveDao {
 			results.getDate("date_entree"),
 			results.getInt("cotisant"),
 			results.getInt("eleve_profil"),
-			results.getInt("diplome"));
+			results.getInt("diplome"),
+			results.getString("motdepasse"));
 			
 				eleves.add(eleve);	
 				
@@ -210,7 +214,8 @@ public class EleveDaoImpl implements EleveDao {
 			results.getDate("date_entree"),
 			results.getInt("cotisant"),
 			results.getInt("eleve_profil"),
-			results.getInt("diplome"));
+			results.getInt("diplome"),
+			results.getString("motdepasse"));
 			
 				eleves.add(eleve);	
 				
@@ -252,7 +257,8 @@ public class EleveDaoImpl implements EleveDao {
 				results.getDate("date_entree"),
 				results.getInt("cotisant"),
 				results.getInt("eleve_profil"),
-				results.getInt("diplome"));
+				results.getInt("diplome"),
+				results.getString("motdepasse"));
 				
 					eleves.add(eleve);	
 					
@@ -294,7 +300,8 @@ public class EleveDaoImpl implements EleveDao {
 			results.getDate("date_entree"),
 			results.getInt("cotisant"),
 			results.getInt("eleve_profil"),
-			results.getInt("diplome"));
+			results.getInt("diplome"),
+			results.getString("motdepasse"));
 			
 				eleves.add(eleve);	
 				
